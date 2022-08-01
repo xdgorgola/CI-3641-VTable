@@ -1,3 +1,5 @@
+/** Simulador principal */
+
 import scala.collection.mutable
 import objclases.ObjClases
 import scala.io.StdIn.readLine
@@ -30,7 +32,8 @@ def wrong_params() =
  */
 def tokens_repetidos(tokens: mutable.Queue[String]): Boolean =
   for t <- tokens do
-    if tokens.count(x => x == t) > 1 then true
+    if tokens.count(x => x == t) > 1 then
+      true
   false
 
 

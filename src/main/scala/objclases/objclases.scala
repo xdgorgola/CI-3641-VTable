@@ -1,3 +1,4 @@
+/** Package conteniendo clase representacion de tipo clase */
 package objclases
 
 import scala.collection.mutable.LinkedHashMap
