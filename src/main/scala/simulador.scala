@@ -33,7 +33,7 @@ def wrong_params() =
 def tokens_repetidos(tokens: mutable.Queue[String]): Boolean =
   for t <- tokens do
     if tokens.count(x => x == t) > 1 then
-      true
+      return true
   false
 
 
@@ -55,11 +55,13 @@ def comando_class(tokens: mutable.Queue[String]): Unit =
         return ()
 
       if tokens_repetidos(tokens) then
+        println(f"Hay definiciones de metodos repetidas.")
         wrong_params()
         return ()
 
       val padre = tokens.dequeue()
       if !clases.contains(padre) then
+        println(f"La clase $padre no existe.")
         wrong_params()
         return ()
 
@@ -68,6 +70,7 @@ def comando_class(tokens: mutable.Queue[String]): Unit =
       return ()
 
   if tokens_repetidos(tokens) then
+    println(f"Hay definiciones de metodos repetidas.")
     wrong_params()
     return ()
 
